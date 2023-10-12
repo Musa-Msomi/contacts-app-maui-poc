@@ -5,15 +5,14 @@ public partial class ContactsPage : ContentPage
 	public ContactsPage()
 	{
 		InitializeComponent();
-	}
 
-    private void btnEditContact_Clicked(object sender, EventArgs e)
+        List<string> contacts = new List<string>()
     {
-        Shell.Current.GoToAsync(nameof(EditContactPage));
+        "James Maddsion","David De Gea","Kevin De Bruyne", "Romelu Lukaku"
+    };
+
+        listContacts.ItemsSource = contacts;
     }
 
-    private void btnAddContact_Clicked(object sender, EventArgs e)
-    {
-        Shell.Current.GoToAsync(nameof(AddContactPage));
-    }
+
 }
