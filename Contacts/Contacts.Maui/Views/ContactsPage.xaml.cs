@@ -23,4 +23,21 @@ public partial class ContactsPage : ContentPage
         public string Email { get; set; }
     }
 
+    private async void listContacts_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+    {
+        if(listContacts.SelectedItem is not null)
+        {
+            // logic
+            await Shell.Current.GoToAsync(nameof(EditContactPage));
+        }
+        
+
+        
+    }
+
+    private void listContacts_ItemTapped(object sender, ItemTappedEventArgs e)
+    {
+        // deselecting
+        listContacts.SelectedItem = null;
+    }
 }

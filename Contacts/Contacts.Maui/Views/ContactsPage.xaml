@@ -3,7 +3,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Contacts.Maui.Views.ContactsPage"
              Title="Contacts">
-    <ListView x:Name="listContacts" BackgroundColor="Transparent" RowHeight="65">
+    <ListView x:Name="listContacts" 
+              BackgroundColor="Transparent" 
+              RowHeight="65"
+              ItemSelected="listContacts_ItemSelected"
+              ItemTapped="listContacts_ItemTapped">
         <ListView.ItemTemplate>
             <DataTemplate>
                 <TextCell Text="{Binding Name}" Detail="{Binding Email}"></TextCell>
