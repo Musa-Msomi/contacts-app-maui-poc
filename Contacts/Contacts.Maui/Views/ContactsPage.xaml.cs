@@ -2,17 +2,25 @@ namespace Contacts.Maui.Views;
 
 public partial class ContactsPage : ContentPage
 {
-	public ContactsPage()
-	{
-		InitializeComponent();
-
-        List<string> contacts = new List<string>()
+    public ContactsPage()
     {
-        "James Maddsion","David De Gea","Kevin De Bruyne", "Romelu Lukaku"
+        InitializeComponent();
+
+        List<Contact> contacts = new()
+    {
+        new Contact { Name="James Maddsion", Email="madders@spurs.com" },
+        new Contact { Name="David De Gea", Email="ddg@manutd.com" },
+        new Contact { Name = "Kevin De Bruyne", Email = "kdb@mancity.com" },
+        new Contact { Name = "Romelu Lukaku", Email = "rlukaku@asroma.com" },
     };
 
         listContacts.ItemsSource = contacts;
     }
 
+    public class Contact
+    {
+        public string Name { get; set; }
+        public string Email { get; set; }
+    }
 
 }
